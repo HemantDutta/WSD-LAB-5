@@ -5,12 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-width=1.0">
     <title>WSD LAB 5 | Form Validation</title>
     <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body>
+<body onload="loadAnimations()">
 
+<div class="container main-cont d-flex flex-column justify-content-center align-items-center">
 
+<!--  Navbar  -->
+    <nav class="p-2 w-100 rounded-pill mt-3" id="nav">
+        <h1 class="text-center text-light">JavaScript Form Validation</h1>
+    </nav>
+<!--Form-->
+    <div class="form w-75" id="form">
+        <h2>Registration Form</h2>
+        <form>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="input-field">
+                        <label for="name" class="col-form-label">Name</label>
+                        <input type="text" name="name" id="name" class="form-control">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="input-field">
+                        <label for="phone" class="col-form-label">Phone Number</label>
+                        <input type="tel" name="phone" id="phone" class="form-control">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="input-field">
+                        <label for="password" class="col-form-label">Password</label>
+                        <input type="password" name="password" id="password" class="form-control">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="input-field">
+                        <label for="conpass" class="col-form-label">Confirm Password</label>
+                        <input type="password" name="conpass" id="conpass" class="form-control" onchange="checkCon()">
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="input-field">
+                        <label for="email" class="col-form-label">Email</label>
+                        <input type="email" name="email" id="email" class="form-control" onchange="checkCon()">
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="btn-field text-center mt-4">
+                        <button class="btn btn-outline-dark" type="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 
+</div>
+<div class="me text-center">
+    <span>Developed By: Hemant Dutta</span>
+    <span><a href="https://github.com/HemantDutta/WSD-LAB-5" target="_blank"><i class="fa-brands fa-github"></i></a></span>
+</div>
 <!--Scripts-->
 <script src="assets/js/jquery-3.6.0.js"></script>
 <script src="assets/js/bootstrap.js"></script>
