@@ -20,12 +20,19 @@ nav:hover{
     box-shadow: black 1px 1px 5px;
 }
 
+.main-cont{
+    margin-bottom: 5em;
+}
+
 .me{
     position: fixed;
     bottom: 0;
     width: 100%;
     background-color: black;
     padding: 10px;
+    transition: all 0.8s ease;
+    opacity: 10%;
+    transform: translateY(100%);
 }
 .me span{
     font-weight: bold;
@@ -51,10 +58,20 @@ nav:hover{
     transition: all 0.8s ease;
     transform: translateY(20%);
     opacity: 0%;
+    gap: 1em;
 }
 
 .form:hover{
     border-bottom-right-radius: 40px;
     border-top-left-radius: 40px;
     box-shadow: white 1px 1px 10px;
+}
+
+
+.input-field{
+    margin-bottom: 2em;
+}
+
+.input-field label {
+    font-weight: 500;
 }
