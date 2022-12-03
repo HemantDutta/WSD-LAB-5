@@ -10,6 +10,30 @@ function loadAnimations(){
     footer.style.opacity = "100%"
 }
 
+function nameValidate(){
+    let name = document.getElementById('name').value;
+    let nameResp = document.getElementById('nameResp');
+    //Name Validation
+    let nameReg = /^([a-zA-Z]){5,25}$/;
+    let nameValid = nameReg.test(name);
+    if(name.length === 0){
+        nameResp.classList.remove("text-success");
+        nameResp.classList.add("text-danger");
+        nameResp.innerText = "Enter a username!"
+    }
+    else if(!nameValid){
+        nameResp.classList.remove("text-success");
+        nameResp.classList.add("text-danger");
+        nameResp.innerText = "Username is invalid!"
+    }
+    else{
+        nameResp.classList.remove("text-danger");
+        nameResp.classList.add("text-success");
+        nameResp.innerText = "Username is valid";
+    }
+}
+
+
 function validateForm() {
 
     //Input Fields
@@ -17,13 +41,14 @@ function validateForm() {
     let phone = document.getElementById('phone').value;
     let password = document.getElementById('password').value;
     let email = document.getElementById('email').value;
+    let age = document.getElementById('age').value;
 
     //Response Spans
     let nameResp = document.getElementById('nameResp');
     let phoneResp = document.getElementById('phoneResp');
     let passResp = document.getElementById('passResp');
     let emailResp = document.getElementById('emailResp');
-
+    let ageResp = document.getElementById('ageResp');
 
     //Name Validation
     let nameReg = /^([a-zA-Z]){5,25}$/;
@@ -82,6 +107,23 @@ function validateForm() {
         passResp.classList.remove("text-danger");
         passResp.classList.add("text-success");
         passResp.innerText = "Password is valid";
+    }
+
+}
+
+function showPass(){
+    let password = document.getElementById('password');
+    let icon = document.getElementById('showPassIcon');
+
+    if(password.type === "password"){
+        password.type = "text";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+    }
+    else{
+        password.type = "password";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
     }
 
 }

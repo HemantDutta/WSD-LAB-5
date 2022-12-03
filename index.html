@@ -24,20 +24,20 @@
                     <div class="col-lg-6">
                         <div class="input-field">
                             <label for="name" class="col-form-label">Name</label>
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name">
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" onkeydown="nameValidate()">
                             <span id="nameResp"></span>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="input-field">
                             <label for="phone" class="col-form-label">Phone Number</label>
-                            <input type="tel" name="phone" id="phone" class="form-control" placeholder="Enter your phone number">
+                            <input type="number" name="phone" id="phone" class="form-control" placeholder="Enter your phone number">
                             <span id="phoneResp"></span>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="input-field">
-                            <label for="password" class="col-form-label">Password</label>
+                            <label for="password" class="col-form-label">Password <button type="button" class="btn btn-outline-dark rounded-pill border-0" onclick="showPass()"><i class="fa-solid fa-eye" id="showPassIcon"></i></button>  </label>
                             <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password">
                             <span id="passResp"></span>
                         </div>
@@ -49,11 +49,18 @@
                             <span id="conResp"></span>
                         </div>
                     </div>
-                    <div class="col-lg-12">
+                    <div class="col-lg-6">
                         <div class="input-field">
                             <label for="email" class="col-form-label">Email</label>
                             <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email">
                             <span id="emailResp"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="input-field">
+                            <label for="age" class="col-form-label">Age</label>
+                            <input type="number" name="age" id="age" class="form-control" placeholder="Enter your age">
+                            <span id="ageResp"></span>
                         </div>
                     </div>
                     <div class="col-lg-12">
