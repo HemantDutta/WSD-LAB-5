@@ -91,14 +91,14 @@ function validateForm() {
     }
 
     //Password Validation
-    let passReg = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[\]:;<>,.?\/~_+-=|]).{8,32}$/;
+    let passReg = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}\[\]:;<>,.?\/~_+-=|]).{8,32}$/;
     let passValid = passReg.test(password);
     if(password.length === 0){
         passResp.classList.remove("text-success");
         passResp.classList.add("text-danger");
         passResp.innerText = "Enter a Password!"
     }
-    else if(!phoneValid){
+    else if(!passValid){
         passResp.classList.remove("text-success");
         passResp.classList.add("text-danger");
         passResp.innerText = "Password is invalid!"
@@ -107,6 +107,25 @@ function validateForm() {
         passResp.classList.remove("text-danger");
         passResp.classList.add("text-success");
         passResp.innerText = "Password is valid";
+    }
+
+    //Email Validation
+    let emailReg = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    let emailValid = emailReg.test(email);
+    if(email.length === 0){
+        emailResp.classList.remove("text-success");
+        emailResp.classList.add("text-danger");
+        emailResp.innerText = "Enter a Email!"
+    }
+    else if(!emailValid){
+        emailResp.classList.remove("text-success");
+        emailResp.classList.add("text-danger");
+        emailResp.innerText = "Email is invalid!"
+    }
+    else{
+        emailResp.classList.remove("text-danger");
+        emailResp.classList.add("text-success");
+        emailResp.innerText = "Email is valid";
     }
 
 }
@@ -125,5 +144,32 @@ function showPass(){
         icon.classList.remove("fa-eye-slash");
         icon.classList.add("fa-eye");
     }
+}
 
+function showConPass(){
+    let password = document.getElementById('conpass');
+    let icon = document.getElementById('showConPassIcon');
+
+    if(password.type === "password"){
+        password.type = "text";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+    }
+    else{
+        password.type = "password";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+    }
+
+}
+
+function confirmPassword(){
+    let con = document.getElementById('conpass');
+    let conresp = document.getElementById('conResp');
+
+    if(con.value.length === 0){
+        conresp.classList.remove("text-success");
+        conresp.classList.add("text-danger");
+        conresp.innerText = "Repeat Password Here!"
+    }
 }
