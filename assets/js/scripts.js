@@ -136,6 +136,67 @@ function validateForm() {
         conresp.innerText = "Repeat Password Here!"
     }
 
+    if(con !== password){
+        conresp.classList.remove("text-success");
+        conresp.classList.remove("text-warning");
+        conresp.classList.add("text-danger");
+        conresp.innerText = "Password doesn't match!";
+    }
+    else{
+        conresp.classList.remove("text-danger");
+        conresp.classList.remove("text-warning");
+        conresp.classList.add("text-success");
+        conresp.innerText = "Password Match!";
+    }
+
+    if(password.length === 0){
+        conresp.classList.remove("text-danger");
+        conresp.classList.remove("text-success");
+        conresp.classList.add("text-warning");
+        conresp.innerText = "Enter the password first!";
+    }
+
+    //Age Validation
+    let ageReg = /^(1[89]|[2-9]\d)$/;
+    let ageValid = ageReg.test(age);
+    if(age.length === 0){
+        ageResp.classList.remove("text-success");
+        ageResp.classList.add("text-danger");
+        ageResp.innerText = "Enter your age!"
+    }
+    else if(!ageValid){
+        ageResp.classList.remove("text-success");
+        ageResp.classList.add("text-danger");
+        ageResp.innerText = "Age is invalid!"
+    }
+    else{
+        ageResp.classList.remove("text-danger");
+        ageResp.classList.add("text-success");
+        ageResp.innerText = "Age is valid";
+    }
+
+}
+
+function ageCheck(){
+    let age = document.getElementById('age').value;
+    let ageResp = document.getElementById('ageResp');
+    let ageReg = /^(1[89]|[2-9]\d)$/;
+    let ageValid = ageReg.test(age);
+    if(age.length === 0){
+        ageResp.classList.remove("text-success");
+        ageResp.classList.add("text-danger");
+        ageResp.innerText = "Enter your age!"
+    }
+    else if(!ageValid){
+        ageResp.classList.remove("text-success");
+        ageResp.classList.add("text-danger");
+        ageResp.innerText = "Age is invalid!"
+    }
+    else{
+        ageResp.classList.remove("text-danger");
+        ageResp.classList.add("text-success");
+        ageResp.innerText = "Age is valid";
+    }
 }
 
 function showPass(){
