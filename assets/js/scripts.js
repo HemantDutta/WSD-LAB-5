@@ -69,8 +69,6 @@ function validateForm() {
         nameResp.innerText = "Username is valid";
     }
 
-
-
     //Phone Validation
     let phoneReg = /^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$/;
     let phoneValid = phoneReg.test(phone);
@@ -128,6 +126,16 @@ function validateForm() {
         emailResp.innerText = "Email is valid";
     }
 
+    //Confirm Password Validation
+    let con = document.getElementById('conpass');
+    let conresp = document.getElementById('conResp');
+
+    if(con.value.length === 0){
+        conresp.classList.remove("text-success");
+        conresp.classList.add("text-danger");
+        conresp.innerText = "Repeat Password Here!"
+    }
+
 }
 
 function showPass(){
@@ -164,12 +172,34 @@ function showConPass(){
 }
 
 function confirmPassword(){
-    let con = document.getElementById('conpass');
+    let con = document.getElementById('conpass').value;
     let conresp = document.getElementById('conResp');
+    let password = document.getElementById('password').value;
 
-    if(con.value.length === 0){
+    if(con.length === 0){
         conresp.classList.remove("text-success");
+        conresp.classList.remove("text-warning");
         conresp.classList.add("text-danger");
         conresp.innerText = "Repeat Password Here!"
+    }
+
+    if(con !== password){
+        conresp.classList.remove("text-success");
+        conresp.classList.remove("text-warning");
+        conresp.classList.add("text-danger");
+        conresp.innerText = "Password doesn't match!";
+    }
+    else{
+        conresp.classList.remove("text-danger");
+        conresp.classList.remove("text-warning");
+        conresp.classList.add("text-success");
+        conresp.innerText = "Password Match!";
+    }
+
+    if(password.length === 0){
+        conresp.classList.remove("text-danger");
+        conresp.classList.remove("text-success");
+        conresp.classList.add("text-warning");
+        conresp.innerText = "Enter the password first!";
     }
 }

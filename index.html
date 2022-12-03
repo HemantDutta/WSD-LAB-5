@@ -38,14 +38,14 @@
                     <div class="col-lg-6">
                         <div class="input-field">
                             <label for="password" class="col-form-label">Password <button type="button" class="btn rounded-pill border-0" onclick="showPass()"><i class="fa-solid fa-eye" id="showPassIcon"></i></button>  </label>
-                            <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password">
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" onkeyup="confirmPassword()">
                             <span id="passResp"></span>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="input-field">
                             <label for="conpass" class="col-form-label">Confirm Password <button type="button" class="btn rounded-pill border-0" onclick="showConPass()"><i class="fa-solid fa-eye" id="showConPassIcon"></i></button> </label>
-                            <input type="password" name="conpass" id="conpass" class="form-control" onchange="confirmPassword()" placeholder="Enter password again">
+                            <input type="password" name="conpass" id="conpass" class="form-control" onkeyup="confirmPassword()" placeholder="Enter password again">
                             <span id="conResp"></span>
                         </div>
                     </div>
