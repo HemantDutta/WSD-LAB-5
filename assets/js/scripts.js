@@ -136,7 +136,7 @@ function validateForm() {
         conresp.innerText = "Repeat Password Here!"
     }
 
-    if(con !== password){
+    if(con.value !== password){
         conresp.classList.remove("text-success");
         conresp.classList.remove("text-warning");
         conresp.classList.add("text-danger");
@@ -175,6 +175,28 @@ function validateForm() {
         ageResp.innerText = "Age is valid";
     }
 
+}
+
+function checkPass(){
+    let password = document.getElementById('password').value;
+    let passResp = document.getElementById('passResp');
+    let passReg = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}\[\]:;<>,.?\/~_+-=|]).{8,32}$/;
+    let passValid = passReg.test(password);
+    if(password.length === 0){
+        passResp.classList.remove("text-success");
+        passResp.classList.add("text-danger");
+        passResp.innerText = "Enter a Password!"
+    }
+    else if(!passValid){
+        passResp.classList.remove("text-success");
+        passResp.classList.add("text-danger");
+        passResp.innerText = "Password is invalid!"
+    }
+    else{
+        passResp.classList.remove("text-danger");
+        passResp.classList.add("text-success");
+        passResp.innerText = "Password is valid";
+    }
 }
 
 function ageCheck(){

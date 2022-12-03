@@ -25,7 +25,7 @@
                     <div class="col-lg-6">
                         <div class="input-field">
                             <label for="name" class="col-form-label">Name <span class="text-danger">*</span></label>
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" onkeydown="nameValidate()">
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" onkeyup="nameValidate()">
                             <span id="nameResp"></span>
                         </div>
                     </div>
@@ -39,7 +39,7 @@
                     <div class="col-lg-6">
                         <div class="input-field">
                             <label for="password" class="col-form-label">Password <span class="text-danger">*</span> <button type="button" class="btn rounded-pill border-0" onclick="showPass()"><i class="fa-solid fa-eye" id="showPassIcon"></i></button>  </label>
-                            <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" onkeyup="confirmPassword()">
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" onkeyup="confirmPassword(), checkPass()">
                             <span id="passResp"></span>
                         </div>
                     </div>
