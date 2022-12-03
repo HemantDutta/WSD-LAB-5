@@ -19,46 +19,47 @@
     <!--Form-->
     <div class="form w-75 d-flex flex-column align-items-center" id="form">
                 <h3>Registration Form</h3>
+                <span class="text-danger">* Required Fields</span>
             <form>
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="input-field">
-                            <label for="name" class="col-form-label">Name</label>
+                            <label for="name" class="col-form-label">Name <span class="text-danger">*</span></label>
                             <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" onkeydown="nameValidate()">
                             <span id="nameResp"></span>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="input-field">
-                            <label for="phone" class="col-form-label">Phone Number</label>
+                            <label for="phone" class="col-form-label">Phone Number <span class="text-danger">*</span></label>
                             <input type="number" name="phone" id="phone" class="form-control" placeholder="Enter your phone number">
                             <span id="phoneResp"></span>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="input-field">
-                            <label for="password" class="col-form-label">Password <button type="button" class="btn rounded-pill border-0" onclick="showPass()"><i class="fa-solid fa-eye" id="showPassIcon"></i></button>  </label>
+                            <label for="password" class="col-form-label">Password <span class="text-danger">*</span> <button type="button" class="btn rounded-pill border-0" onclick="showPass()"><i class="fa-solid fa-eye" id="showPassIcon"></i></button>  </label>
                             <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" onkeyup="confirmPassword()">
                             <span id="passResp"></span>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="input-field">
-                            <label for="conpass" class="col-form-label">Confirm Password <button type="button" class="btn rounded-pill border-0" onclick="showConPass()"><i class="fa-solid fa-eye" id="showConPassIcon"></i></button> </label>
+                            <label for="conpass" class="col-form-label">Confirm Password <span class="text-danger">*</span> <button type="button" class="btn rounded-pill border-0" onclick="showConPass()"><i class="fa-solid fa-eye" id="showConPassIcon"></i></button> </label>
                             <input type="password" name="conpass" id="conpass" class="form-control" onkeyup="confirmPassword()" placeholder="Enter password again">
                             <span id="conResp"></span>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="input-field">
-                            <label for="email" class="col-form-label">Email</label>
+                            <label for="email" class="col-form-label">Email <span class="text-danger">*</span></label>
                             <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email">
                             <span id="emailResp"></span>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="input-field">
-                            <label for="age" class="col-form-label">Age</label>
+                            <label for="age" class="col-form-label">Age <span class="text-danger">*</span></label>
                             <input type="number" name="age" id="age" class="form-control" placeholder="Enter your age" onkeyup="ageCheck()">
                             <span id="ageResp"></span>
                         </div>
