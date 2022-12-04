@@ -31,6 +31,12 @@ function nameValidate(){
         nameResp.classList.add("text-success");
         nameResp.innerText = "Username is valid";
     }
+
+    let blockReg = /^[0-9]$/;
+    if(blockReg.test(name)){
+        event.preventDefault();
+        return false;
+    }
 }
 
 
