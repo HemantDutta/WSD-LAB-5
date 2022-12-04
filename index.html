@@ -32,7 +32,7 @@
                     <div class="col-lg-6">
                         <div class="input-field">
                             <label for="phone" class="col-form-label">Phone Number <span class="text-danger">*</span></label>
-                            <input type="number" name="phone" id="phone" class="form-control" placeholder="Enter your phone number" oninput="this.value = this.value.replace(/^[a-zA-Z]$/, '')">
+                            <input type="number" name="phone" id="phone" class="form-control" placeholder="Enter your phone number" onkeyup="phoneValidation()" oninput="this.value = this.value.replace(/^[a-zA-Z]$/, '')">
                             <span id="phoneResp"></span>
                         </div>
                     </div>

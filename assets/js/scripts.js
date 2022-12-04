@@ -39,6 +39,28 @@ function nameValidate(){
     }
 }
 
+function phoneValidation(){
+    let phone = document.getElementById('phone').value;
+    let phoneResp = document.getElementById('phoneResp');
+    let phoneReg = /^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$/;
+    let phoneValid = phoneReg.test(phone);
+    if(phone.length === 0){
+        phoneResp.classList.remove("text-success");
+        phoneResp.classList.add("text-danger");
+        phoneResp.innerText = "Enter a phone number!"
+    }
+    else if(!phoneValid){
+        phoneResp.classList.remove("text-success");
+        phoneResp.classList.add("text-danger");
+        phoneResp.innerText = "Phone Number is invalid!"
+    }
+    else{
+        phoneResp.classList.remove("text-danger");
+        phoneResp.classList.add("text-success");
+        phoneResp.innerText = "Phone Number is valid";
+    }
+}
+
 
 function validateForm() {
 
